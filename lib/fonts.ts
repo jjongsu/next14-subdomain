@@ -5,45 +5,45 @@ export const pretendardFont = localFont({
     src: [
         {
             path: '../assets/fonts/Pretendard-Bold.woff2',
-            style: 'Bold',
+            style: 'bold',
+            weight: '700'
         },
         {
             path: '../assets/fonts/Pretendard-Light.woff2',
-            style: 'Light',
+            style: 'light',
+            weight: '300'
         },
         {
             path: '../assets/fonts/Pretendard-Medium.woff2',
-            style: 'Medium',
-        },
-        {
-            path: '../assets/fonts/Pretendard-Light.woff2',
-            style: 'Light',
+            style: 'medium',
+            weight: '500'
         },
         {
             path: '../assets/fonts/Pretendard-Regular.woff2',
-            style: 'Regular',
+            style: 'normal'
         },
         {
             path: '../assets/fonts/Pretendard-SemiBold.woff2',
-            style: 'SemiBold',
-        },
+            style: 'semiBold',
+            weight: '600'
+        }
     ],
     variable: '--font-pretendard',
-    display: 'swap',
+    display: 'swap'
 });
-
 export const blueberryFont = localFont({
     preload: true,
     src: [
         {
             path: '../assets/fonts/BlueberrySans-Medium.woff2',
-            style: 'Medium',
+            style: 'medium',
+            weight: '500'
         },
         {
             path: '../assets/fonts/BlueberrySans-Regular.woff2',
-            style: 'Regular',
-        },
+            style: 'normal'
+        }
     ],
     variable: '--font-blueberry',
-    display: 'swap',
+    display: 'swap'
 });

@@ -8,6 +8,9 @@ const config: Config = {
                 pretendard: ['var(--font-pretendard)'],
                 blueberry: ['var(--font-blueberry)'],
             },
+            colors: {
+                aside: { bg: '#F2F2F2' },
+            },
         },
     },
     plugins: [],

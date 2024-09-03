@@ -1,3 +1,5 @@
+import { hansolVHOMLogo } from '@/assets/images';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -5,20 +7,36 @@ import { ReactNode } from 'react';
  * 사이트 메뉴를 설정하도록 구성하는 wrapper component
  */
 export default function Navigator({ children }: { children: ReactNode }) {
+    const menu: { title: string; url: string }[] = [
+        { title: '견적 수정', url: '/estimate/paper' },
+        { title: '견적 관리', url: '/estimate/material' },
+    ];
+
     return (
-        <div className='w-screen h-screen'>
-            <nav className='w-full flex items-center'>
-                <Link className='font-pretendard font-bold' href={'/'}>
-                    홈페이지
+        <div className='relative'>
+            <nav className='sticky top-0 flex h-[86px] w-full items-center border bg-white p-3'>
+                <Link className='flex-1 font-pretendard font-bold' href={'/'}>
+                    <Image src={hansolVHOMLogo} alt='logo' priority />
                 </Link>
-                <Link className='font-blueberry font-light' href={'/abc'}>
+                <Link className='flex-0 font-blueberry text-[18px]' href={'/abc'}>
                     마이페이지
                 </Link>
-                <Link className='font-blueberry' href={'/'}>
+                {/* <Link className='font-blueberry flex-0' href={'/'}>
                     로그아웃
-                </Link>
+                </Link> */}
             </nav>
-            {children}
+            <section className='flex h-full w-full'>
+                <aside className='flex-0 sticky left-0 top-[86px] flex h-fit flex-col bg-red-400'>
+                    {menu.map(({ title, url }) => {
+                        return (
+                            <Link key={title} href={url} className='font-pretendard text-base font-light'>
+                                {title}-page
+                            </Link>
+                        );
+                    })}
+                </aside>
+                <div className='flex-1 overflow-auto'>{children}</div>
+            </section>
         </div>
     );
 }
