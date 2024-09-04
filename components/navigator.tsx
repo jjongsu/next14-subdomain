@@ -9,7 +9,8 @@ import { ReactNode } from 'react';
 export default function Navigator({ children }: { children: ReactNode }) {
     const menu: { title: string; url: string }[] = [
         { title: '견적 수정', url: '/company/paper' },
-        { title: '견적 관리', url: '/company/material' }
+        { title: '견적 관리', url: '/company/material' },
+        { title: '공휴일 관리', url: '/company/holiday' }
     ];
 
     return (

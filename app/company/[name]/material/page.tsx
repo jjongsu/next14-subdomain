@@ -1,7 +1,3 @@
-interface IParams {
-    params: { name: string };
-}
-
-export default function EstimateMaterial({ params: { name } }: IParams) {
+export default function EstimateMaterial({ params: { name } }: ICompanyParams) {
     return <div>EstimateMaterial-{name}</div>;
 }

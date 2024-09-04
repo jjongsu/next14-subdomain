@@ -1,7 +1,3 @@
-interface IParams {
-    params: { name: string };
-}
-
-export default function MyPage({ params: { name } }: IParams) {
+export default function MyPage({ params: { name } }: ICompanyParams) {
     return <div>My-Page : {name}</div>;
 }

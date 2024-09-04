@@ -17,7 +17,6 @@ export const middleware = (req: NextRequest) => {
 
     // 서브 도메인이 있는 경우
     if (checkIsSubDomain(host)) {
-        console.log('서브 도메인이 있는 경우');
         const subdomain = host?.replace(process.env.NODE_ENV === 'development' ? '.localhost:3000' : '.next14-subdomain.vercel.app', '');
         const path = `${req.nextUrl.pathname}${searchParams.length > 0 ? `?${searchParams}` : ''}`.replace('/company', '');
 
