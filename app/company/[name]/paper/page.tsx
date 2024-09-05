@@ -1,8 +1,4 @@
-interface IParams {
-    params: { name: string };
-}
-
-export default function EstimatiePaper({ params: { name } }: IParams) {
+export default function EstimatiePaper({ params: { name } }: ICompanyParams) {
     console.log(name);
     return <div>EstimatiePaper-{name}</div>;
 }

@@ -1,5 +1,5 @@
-export default function RootLayout({
-    children,
+export default function CompanyLayout({
+    children
 }: Readonly<{
     children: React.ReactNode;
 }>) {

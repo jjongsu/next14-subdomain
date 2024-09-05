@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkIsSubDomain, isChangeSubDomain } from './lib/middlewareHelper';
+// import { authenticate } from 'auth-provider'
 
+// [TODO] : company 접속 가능한 권한이 있는지 확인한 후에 없으면 login or error page로 보내기
 export const middleware = (req: NextRequest) => {
     const host = req.headers.get('host');
     const searchParams = req.nextUrl.searchParams.toString();
+    // const isAuthenticated = authenticate(request);
 
     // 서브 도메인을 사용하여야하는 경우
     if (!checkIsSubDomain(host) && isChangeSubDomain(req.nextUrl.pathname)) {
